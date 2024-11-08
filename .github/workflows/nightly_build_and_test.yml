@@ -20,7 +20,7 @@ jobs:
     # pti is a selector to machines with Intel Ponte Vecchio officially
     # Intel(R) Data Center GPU Max 1100
     #
-    runs-on: [self-hosted, Linux]
+    runs-on: [self-hosted]
 
     continue-on-error: true
 
@@ -137,7 +137,7 @@ jobs:
     needs: sdk-build-and-test
     name: Test pti library Ubuntu-22-04
 
-    runs-on: [Linux, self-hosted]
+    runs-on: [self-hosted]
 
     continue-on-error: true
 
@@ -214,7 +214,7 @@ jobs:
     if: ${{ always() }} && vars.PTI_RUN_TESTS == 1
     needs: pti-tools-build-and-test
 
-    runs-on: [Linux, self-hosted]
+    runs-on: [self-hosted]
 
     strategy:
       matrix:
