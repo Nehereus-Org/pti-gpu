@@ -137,7 +137,7 @@ jobs:
     needs: sdk-build-and-test
     name: Test pti library Ubuntu-22-04
 
-    runs-on: [Linux, pti-2gpu]
+    runs-on: [Linux, self-hosted]
 
     continue-on-error: true
 
@@ -214,7 +214,7 @@ jobs:
     if: ${{ always() }} && vars.PTI_RUN_TESTS == 1
     needs: pti-tools-build-and-test
 
-    runs-on: [Linux, pti-2gpu]
+    runs-on: [Linux, self-hosted]
 
     strategy:
       matrix:
